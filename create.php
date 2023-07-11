@@ -1,6 +1,12 @@
 <?php
 try{
-    $con=mysqli_connect('localhost','root','AaAa*2461949');
+        $servername = "sql8.freemysqlhosting.net";
+        $username = "sql8631827";
+        $password = "2IfWRAqIUS";
+        $database = "sql8631827";
+        $port = 3306;
+        $con = mysqli_connect($servername, $username, $password, $database, $port);
+
     if($con){
         $sql = "CREATE DATABASE IF NOT EXISTS hotels";
         if ($con->query($sql) === TRUE) {
@@ -11,7 +17,7 @@ try{
         $sql = "use hotels";
         $con->query($sql);
         $sql = "CREATE TABLE IF NOT EXISTS users (
-            user_id INT AUTO_INCREMENT PRIMARY KEY,
+            user_id VARCHAR(255) PRIMARY KEY,
             user_password VARCHAR(255) NOT NULL,
             email VARCHAR(255) NOT NULL UNIQUE,
             age INT NOT NULL
@@ -22,6 +28,7 @@ try{
         } else {
             echo "Error creating table: " . $con->error;
         }
+        $con->close();
     }
     else{
         echo "connection failed";

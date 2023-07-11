@@ -1,6 +1,11 @@
 <?php
+$servername = "sql8.freemysqlhosting.net";
+$username = "sql8631827";
+$password = "2IfWRAqIUS";
+$database = "sql8631827";
+$port = 3306;
+$con = mysqli_connect($servername, $username, $password, $database, $port);
 if(!empty($_POST['username'])&&!empty($_POST['email'])&&!empty($_POST['password'])&&!empty($_POST['age']) ){
-    $con=mysqli_connect('localhost','root','AaAa*2461949');
     $name=$_POST['username'];
     $email=$_POST['email'];
     $password=$_POST['password'];
@@ -13,4 +18,5 @@ if(!empty($_POST['username'])&&!empty($_POST['email'])&&!empty($_POST['password'
             echo "Error inserting data " . $conn->error;
         }
     }
+    $con->close();
 }
