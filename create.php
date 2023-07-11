@@ -22,7 +22,6 @@ try{
         } else {
             echo "Error creating table: " . $con->error;
         }
-        mysqli_close($con);
     }
     else{
         echo "connection failed";
