@@ -8,13 +8,13 @@ try{
         $con = mysqli_connect($servername, $username, $password, $database, $port);
 
     if($con){
-        $sql = "CREATE DATABASE IF NOT EXISTS hotels";
+        $sql = "CREATE DATABASE IF NOT EXISTS sql8631827;";
         if ($con->query($sql) === TRUE) {
             echo "Database created succefully";
         }else{
             echo "Database creation failed";
         }
-        $sql = "use hotels";
+        $sql = "use sql8631827;";
         $con->query($sql);
         $sql = "CREATE TABLE IF NOT EXISTS users (
             user_id VARCHAR(255) PRIMARY KEY,
